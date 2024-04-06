@@ -4,7 +4,6 @@
 
 .why-cion {
   height: 16.62rem;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   padding-top: 1.7358rem;
@@ -14,7 +13,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .why-cion__animation-container{
+  .why-cion__animation-container {
     display: none;
   }
 }
@@ -33,19 +32,19 @@
   .why-cion__animation-container {
     position: relative;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .why-cion__center {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 8.811rem;
     height: 8.811rem;
     background-color: #f6f6f6;
-    animation: animate 1s linear infinite;
-    animation-timing-function: ease-out;
+    /* animation: move 3s linear infinite; */
+    /* animation-timing-function: ease-out; */
   }
 
   @keyframes animate {
@@ -70,6 +69,50 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     padding: 0 1.584rem;
+    border-radius: 50%;
+    /* border: 2px solid var(--brandClr); */
+  }
+
+  @keyframes move {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  .why-cion__title-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: 50%;
+    background: #f6f6f6;
+    animation: blink 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes blink {
+    0% {
+      width: 100%;
+      height: 100%;
+    }
+    50% {
+      width: 105%;
+      height: 105%;
+      background-color: #eea3fc;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .why-cion__center-box {
@@ -137,17 +180,7 @@
     line-height: 0.9;
   }
 
-  .why-cion__title-box {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 1.792rem;
-  }
-
   /* * {
-  border: 1px solid red;
-} */
+    border: 1px solid red;
+  } */
 }

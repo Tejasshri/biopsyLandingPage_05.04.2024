@@ -19,7 +19,7 @@
     <?php include "./components/array.php" ?>
     <div class="main-app-container">
         <?php include "./components/banner.php" ?>
-        <?php include "./components/new.php" ?>
+        <?php include "./components/whyCion.php" ?>
         <?php include("components/typesOfBiospy.php"); ?>
         <?php include("components/costOFBiopsy.php") ?>
         <?php include("components/biopsyFaqs.php") ?>

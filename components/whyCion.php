@@ -1,38 +1,38 @@
-
-<section class="why-cion-container">
-    <div class="why-cion-container__center">
-        <div class="dot" id="id1"></div>
-        <div class="dot" id="id2"></div>
-        <div class="dot" id="id3"></div>
-        <div class="dot" id="id4"></div>
+<div class="why-cion">
+    <h1 class="why-cion__title">
+        Why <span>Choose CION</span>
+    </h1>
+    <div class="why-cion__animation-container">
+        <div class="why-cion__center">
+            <div class="why-cion__title-box">
+                <h1 class="why-cion__title why-cion__center-title">
+                    WHY <span>US</span>
+                </h1>
+                <span class="question-mark-sign">
+                    ?
+                </span>
+            </div>
+            <div class="why-cion__animation-box">
+                <div class="why-cion__center-box">
+                    <img src="../assets/hospital.webp" alt="">
+                    <p>State-of-the-Art Facilities</p>
+                </div>
+                <div class="why-cion__center-box">
+                    <img src="../assets/doctor.webp" alt="">
+                    <p>State-of-the-Art Facilities</p>
+                </div>
+                <div class="why-cion__center-box">
+                    <img src="../assets/Patient.webp" alt="">
+                    <p>State-of-the-Art Facilities</p>
+                </div>
+                <div class="why-cion__center-box">
+                    <img src="../assets/healthcare.webp" alt="">
+                    <p>State-of-the-Art Facilities</p>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+    <div class="mobile-why-cion__container">
 
-<script>
-    let centerDiv = document.querySelector('.why-cion-container__center');
-    const dots = document.querySelectorAll('.dot');
-    let isVisible = false;
-
-    centerDiv.addEventListener("click", () => {
-        if (!isVisible) {
-            dots.forEach((dot, index) => {
-                const angle = (index * Math.PI / 2) + (Math.PI / 4);
-                const radius = 200;
-
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
-
-                dot.style.transform = `translate(${x}px, ${y}px)`;
-                dot.style.opacity = 1;
-            });
-            isVisible = true;
-        } else {
-            dots.forEach((dot) => {
-
-                dot.style.transform = 'none';
-                dot.style.opacity = 0;
-            });
-            isVisible = false;
-        }
-    });
-</script>
+    </div>
+</div>

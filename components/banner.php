@@ -5,7 +5,11 @@
         onwards
     </h1>
     <form class="banner__form">
-        <h1 class="banner__form-heading">Book Your <span style="color:var(--brandClr);">Biopsy Test</span></h1>
+        <div class="banner__form-top">
+            <img src="../assets/phoneImg.webp" alt="">
+            +91 7032656153 / 9989835053
+        </div>
+        <h1 class="banner__form-heading">Book Your <span style="color:var(--brandClr);">Biopsy Test !Now</span></h1>
         <input class="banner__first-input" type="text" placeholder="Name" name="name">
         <input type="text" placeholder="Phone number" name="number">
         <input type="text" placeholder="Message" name="message">
@@ -15,7 +19,10 @@
     </form>
     <div class="banner__additional-benifit-text">
         <h1>Additional Benefits</h1>
-        <p>Get In-Person Oncologist Consultation <span>Worth Rs. 850/- for FREE</span></p>
+        <p>Get In-Person Oncologist Consultation Worth <span class="banner__money-span">Rs. 850/-</span> for <span>FREE</span></p>
         <p style="margin-top: .1132rem;">Get Free Biopsy Cost Estimation</p>
     </div>
+</div>
+<div class="invisible-form-box">
+
 </div>
