@@ -146,6 +146,8 @@
   }
   .banner {
     height: 19.15rem;
+    background: url(../assets/banner_image.png);
+    background-size: cover;
   }
 
   .banner__top-text {
