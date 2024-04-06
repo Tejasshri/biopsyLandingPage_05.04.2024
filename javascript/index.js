@@ -7,28 +7,29 @@ let isVisible = false;
 
 function updateAnimation() {
   if (isVisible) {
+    if (window.innerWidth <= 768) {
+      animationBoxEl.style.width = "18.81rem";
+      animationBoxEl.style.height = "12.245rem";
+      // animationBoxEl.style.visibility = "visible";
+      animationBoxEl.style.opacity = "1";
+      return;
+    }
     animationBoxEl.style.width = "26.58490566037736rem";
     animationBoxEl.style.height = "12.245rem";
     // animationBoxEl.style.visibility = "visible";
-    animationBoxEl.style.opacity = '1' ;
+    animationBoxEl.style.opacity = "1";
   } else {
     animationBoxEl.style.width = "50%";
     animationBoxEl.style.height = "50%";
     // animationBoxEl.style.visibility = "hidden";
-    animationBoxEl.style.opacity = '0' ;
+    animationBoxEl.style.opacity = "0";
   }
 }
 
-centerEl.addEventListener("click", () => {
-  isVisible = !isVisible;
-  updateAnimation()
-});
-
-updateAnimation()
-
+updateAnimation();
 
 function displayPopup() {
-    const popupContainer = `
+  const popupContainer = `
         <button class="popupbtn1" onclick="closeVideo()"><img src="assets/CancelButtonSmallDevices.webp" alt="cancel-button-icon" /></button>
         <button class="popupbtn2" onclick="closeVideo()"><img src="assets/Cancel.webp" alt="cancel-button-icon" /></button>
         <div class="popup-container">
@@ -46,15 +47,41 @@ function displayPopup() {
     </div>
 `;
 
-    Swal.fire({
-        html: popupContainer,
-        width: '100%',
-        padding: '0px',
-        showCloseButton: false,
-        showConfirmButton: false,
-    });
+  Swal.fire({
+    html: popupContainer,
+    width: "100%",
+    padding: "0px",
+    showCloseButton: false,
+    showConfirmButton: false,
+  });
 }
 
 function closeVideo() {
-    Swal.close(); // Close the SweetAlert dialog
+  Swal.close(); // Close the SweetAlert dialog
 }
+
+window.addEventListener("resize", (event) => {
+  updateAnimation();
+});
+
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.5,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // The div is in view!
+      console.log("Div is visible!");
+      isVisible = true;
+      updateAnimation();
+    } else {
+      isVisible = false;
+      updateAnimation();
+    }
+  });
+}, options);
+
+observer.observe(centerEl)

@@ -22,7 +22,7 @@
                     <p>State-of-the-Art Facilities</p>
                 </div>
                 <div class="why-cion__center-box">
-                    <img src="../assets/Patient.webp" alt="">
+                    <img src="../assets/Patient.png" alt="">
                     <p>State-of-the-Art Facilities</p>
                 </div>
                 <div class="why-cion__center-box">
